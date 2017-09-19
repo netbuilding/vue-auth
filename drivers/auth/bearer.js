@@ -6,7 +6,7 @@ module.exports = {
     
     response: function (res) {
         var headers = this.options.http._getHeaders.call(this, res),
-            token = headers.Authorization || headers.authorization;
+            token = headers.Authorization || headers.authorization || res.data.token;
 
         if (token) {
             token = token.split(/Bearer\:?\s?/i);

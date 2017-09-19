@@ -48,6 +48,11 @@ module.exports = {
                         return;
                     }
 
+                    // edited by Isaac
+                    // add origin path 
+                    let redirect_route_path = encodeURIComponent(this.options.Vue.router.history.pending.path);
+                    redirect.query = {redirect_route_path: redirect_route_path};
+
                     // router v2.x
                     if (next) {
                         next(redirect);
